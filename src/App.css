@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background: url("/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+article.card {
+  --bg: #fff;
+  --title-color: #fff;
+  --title-color-hover: #000;
+  --text-color: #666;
+  --button-color: #eee;
+  --button-color-hover: #ddd;
+  background: var(--bg);
+  border-radius: 2rem;
+  padding: 0.5rem;
+  width: 20rem;
+  height: 30rem;
+  margin: 2rem;
+  overflow: clip;
+  position: relative;
+  font-family: Lato, Montserrat, Helvetica, Arial, sans-serif;
+
+  &.dark {
+    --bg: #222;
+    --title-color: #fff;
+    --title-color-hover: #fff;
+    --text-color: #ccc;
+    --button-color: #555;
+    --button-color-hover: #444;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 1rem);
+    height: 30%;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    mask: linear-gradient(#0000, #000f 80%);
+    backdrop-filter: blur(1rem);
+    border-radius: 0 0 1.5rem 1.5rem;
+    translate: 0 0;
+    transition: translate 0.25s;
+  }
+
+  > img {
+    max-width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: 50% 5%;
+    border-radius: 1.5rem;
+    display: block;
+    transition: aspect-ratio 0.25s, object-position 0.5s;
+  }
+
+  > section {
+    margin: 1rem;
+    height: calc(33.3333% - 1rem);
+    display: flex;
+    flex-direction: column;
+
+    header h2 {
+      margin: 0;
+      margin-block-end: 1rem;
+      font-size: 1.5rem;
+      opacity: 0;
+      translate: 0 -200%;
+      opacity: 1;
+      color: var(--title-color);
+      transition: color 0.5s, margin-block-end 0.25s, opacity 1s,
+        translate 0.25s;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.3;
+      color: var(--text-color);
+      opacity: 0;
+      margin: 0;
+      translate: 0 100%;
+      transition: margin-block-end 0.25s, opacity 1s 0.2s, translate 0.25s 0.2s;
+    }
+
+    footer {
+      flex: 1;
+      align-items: flex-end;
+      display: flex;
+      justify-content: space-between;
+      translate: 0 100%;
+      opacity: 0;
+      transition: translate 0.25s 0.2s, opacity 1s;
+    }
+
+    .tag,
+    span.tag {
+      align-self: center;
+      color: var(--title-color-hover);
+    }
+
+    button {
+      border: 1px solid #0000;
+      border-radius: 1.25rem 1.25rem 1.5rem 1.25rem;
+      font-size: 1rem;
+      padding: 1rem 1.5rem 1rem 2.7rem;
+      translate: 1rem;
+      background: var(--button-color);
+      transition: background 0.33s;
+      outline-offset: 2px;
+      position: relative;
+      color: var(--title-color-hover);
+
+      &::before,
+      &::after {
+        content: "";
+        width: 0.85rem;
+        height: 0.1rem;
+        background: currentcolor;
+        position: absolute;
+        top: 50%;
+        left: 1.33rem;
+        border-radius: 1rem;
+      }
+
+      &::after {
+        rotate: 90deg;
+        transition: rotate 0.15s;
+      }
+
+      &.following {
+        &::after {
+          rotate: 0deg;
+        }
+      }
+
+      &:hover {
+        background: var(--button-color-hover);
+      }
+
+      &:focus {
+        outline: 2px solid var(--text-color);
+      }
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    &::before {
+      translate: 0 100%;
+    }
+
+    > img {
+      aspect-ratio: 1 / 1;
+      object-position: 50% 10%;
+      transition: aspect-ratio 0.25s, object-position 0.25s;
+    }
+
+    > section {
+      header h2,
+      p {
+        translate: 0 0;
+        margin-block-end: 0.5rem;
+        opacity: 1;
+      }
+
+      header h2 {
+        color: var(--title-color-hover);
+      }
+
+      footer {
+        translate: 0 0;
+        opacity: 1;
+        transition: translate 0.25s 0.25s, opacity 0.5s 0.25s;
+      }
+    }
+  }
+}

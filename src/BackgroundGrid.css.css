@@ -1,0 +1,200 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font: inherit;
+}
+
+html {
+  min-block-size: 100%;
+  /* Foundations */
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 40px;
+
+  /* Radius */
+  --radius-1: 4px;
+  --radius-2: 8px;
+
+  /* Border */
+  --border-1: 1px;
+
+  /* Neutral */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-000: #efefef;
+  --gray-100: #dfdfdf;
+  --gray-200: #cbcbcb;
+  --gray-300: #b7b7b7;
+  --gray-400: #969696;
+  --gray-500: #747474;
+  --gray-600: #616161;
+  --gray-700: #3a3a3a;
+  --gray-800: #1d1d1d;
+  --gray-900: #121212;
+
+  /* Colors */
+  --orange-400: #ff4d00;
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* Semantic */
+  --surface-000: var(--gray-000);
+  --surface-100: var(--gray-100);
+  --surface-200: var(--gray-200);
+  --border-000: var(--gray-300);
+  --dots-hover: var(--black);
+  --focus: var(--orange-400);
+  --hover: var(--orange-400);
+  --active: var(--orange-400);
+  --text: var(--black);
+  --text-hover: var(--orange-400);
+  --text-light: var(--gray-500);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-000: var(--black);
+    --surface-100: var(--gray-900);
+    --surface-200: var(--gray-800);
+    --border-000: var(--gray-700);
+    --dots-hover: var(--gray-600);
+    --focus: var(--orange-400);
+    --hover: var(--orange-400);
+    --active: var(--orange-400);
+    --text: var(--gray-000);
+    --text-hover: var(--orange-400);
+    --text-light: var(--gray-500);
+  }
+}
+
+::selection {
+  background-color: var(--active);
+  color: var(--white);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--surface-000);
+  color: var(--text);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-3);
+  height: 100%;
+}
+
+.container {
+  border-width: var(--border-1);
+  border-radius: var(--radius-2);
+  border-color: var(--border-000);
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.container header {
+  background-color: var(--surface-100);
+  border-bottom-width: var(--border-1);
+  border-bottom-color: var(--border-000);
+  border-bottom-style: solid;
+  border-top-left-radius: var(--radius-2);
+  border-top-right-radius: var(--radius-2);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: max(36px, 1.875vw);
+  padding: 0 max(10px, 0.625vw);
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.fields {
+  color: var(--text-light);
+  display: flex;
+  gap: var(--space-3);
+}
+
+output {
+  display: inline-block;
+  text-align: right;
+  min-width: 3ch;
+}
+
+.dot-grid {
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 1;
+  background-image: radial-gradient(
+    var(--surface-200) 0.5px,
+    var(--surface-000) 0.5px
+  );
+  background-size: max(8px, 0.4166666667vw) max(8px, 0.4166666667vw);
+  background-repeat: repeat;
+  position: relative;
+  cursor: crosshair;
+}
+
+.dot-grid-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  --radius: 200px;
+  mask-image: radial-gradient(
+    circle var(--radius) at var(--x) var(--y),
+    var(--bg) 40%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dot-grid-mask {
+    --bg: #000;
+    opacity: 0;
+    display: block;
+    transition: opacity 0.2s ease-in-out;
+    background-image: radial-gradient(
+      var(--dots-hover) 0.5px,
+      var(--surface-000) 0.5px
+    );
+    background-size: max(8px, 0.4166666667vw) max(8px, 0.4166666667vw);
+    background-repeat: repeat;
+    will-change: webkitmaskimage, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    inset: 0;
+  }
+
+  .dot-grid:hover .dot-grid-mask {
+    opacity: 1;
+  }
+}
