@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CardProfile from "./components/Card.jsx";
+import CardProfile from "./components/Card/Card.jsx";
 import "./App.css";
 
 const vikingImg = "/viking.png";
