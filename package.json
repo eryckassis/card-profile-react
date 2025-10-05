@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
+    "greensock": "^1.20.2",
+    "gsap": "^3.13.0",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
