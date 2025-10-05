@@ -8,11 +8,11 @@ function CardProfile({
   isFollowing,
   onToggle,
   dark,
-  imgSrc,
+  imageSource,
 }) {
   return (
     <article className={`card${dark ? " dark" : ""}`}>
-      <img src={imgSrc} alt={`Perfil de ${name}`} />
+      <img src={imageSource} alt={`Perfil de ${name}`} />
       <section>
         <header>
           <h2>{name}</h2>
@@ -45,7 +45,7 @@ CardProfile.propTypes = {
   isFollowing: PropTypes.bool.isRequired,
   onToggle: PropTypes.func.isRequired,
   dark: PropTypes.bool.isRequired,
-  imgSrc: PropTypes.string.isRequired,
+  imageSource: PropTypes.string.isRequired,
 };
 
 export default CardProfile;

@@ -1,8 +1,7 @@
 import { useState } from "react";
-import CardProfile from "./components/Card.jsx";
-import "./App.css";
-
-const vikingImg = "/viking.png";
+import CardProfile from "./components/Card/Card.jsx";
+import "./styles/App.css";
+const imagemParaOsCards = "/viking.png";
 
 function App() {
   const [isFollowing, setIsFollowing] = useState([false, false]);
@@ -14,7 +13,7 @@ function App() {
         "Também conhecido como Marca de Lobo, era uma jovem jomsviking da Noruega.",
       followers: 15,
       dark: false,
-      imgSrc: vikingImg,
+      imageSource: imagemParaOsCards,
     },
     {
       name: "Eivor Ragnarson",
@@ -22,22 +21,26 @@ function App() {
         "Também conhecido como Marca de Lobo, era uma jovem jomsviking da Noruega.",
       followers: 15,
       dark: true,
-      imgSrc: vikingImg,
+      imageSource: imagemParaOsCards,
     },
   ];
 
-  const handleToggle = (idx) => {
-    setIsFollowing((prev) => prev.map((val, i) => (i === idx ? !val : val)));
+  const handleToggle = (cardIndex) => {
+    setIsFollowing((prevFollowStates) =>
+      prevFollowStates.map((isFollowed, i) =>
+        i === cardIndex ? !isFollowed : isFollowed
+      )
+    );
   };
 
   return (
     <main>
-      {cards.map((card, idx) => (
+      {cards.map((cardData, cardIndex) => (
         <CardProfile
-          key={idx}
-          {...card}
-          isFollowing={isFollowing[idx]}
-          onToggle={() => handleToggle(idx)}
+          key={cardIndex}
+          {...cardData}
+          isFollowing={isFollowing[cardIndex]}
+          onToggle={() => handleToggle(cardIndex)}
         />
       ))}
     </main>
