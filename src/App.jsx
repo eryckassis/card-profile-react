@@ -3,14 +3,14 @@ import CardProfile from "./components/Card/Card.jsx";
 import MouseFollow from "./components/MouseFollow.jsx";
 import "./styles/App.css";
 import "./styles/MouseFollow.css";
-const imagemParaOsCards = "/viking.png";
+const imagemParaOsCards = "/perfil.png";
 
 function App() {
   const [isFollowing, setIsFollowing] = useState([false, false]);
 
   const cardsProfile = [
     {
-      name: "Eivor Ragnarson",
+      name: "Alissa Dotter ",
       description:
         "Também conhecido como Marca de Lobo, era uma jovem jomsviking da Noruega.",
       followers: 15,
@@ -18,7 +18,7 @@ function App() {
       imageSource: imagemParaOsCards,
     },
     {
-      name: "Eivor Ragnarson",
+      name: "Alissa Dotter",
       description:
         "Também conhecido como Marca de Lobo, era uma jovem jomsviking da Noruega.",
       followers: 15,
