@@ -1,6 +1,8 @@
 import { useState } from "react";
 import CardProfile from "./components/Card/Card.jsx";
+import MouseFollow from "./components/MouseFollow.jsx";
 import "./styles/App.css";
+import "./styles/MouseFollow.css";
 const imagemParaOsCards = "/viking.png";
 
 function App() {
@@ -43,6 +45,14 @@ function App() {
           onToggle={() => handleToggle(cardIndex)}
         />
       ))}
+      <MouseFollow
+        size={60}
+        color="#f6f3f7"
+        duration={0.25}
+        ease="power3.out"
+        enabled={matchMedia?.("(pointer: fine)").matches ?? true}
+        fadeOnHover={true}
+      />
     </main>
   );
 }
