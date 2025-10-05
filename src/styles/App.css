@@ -21,11 +21,11 @@ main {
 }
 
 article.card {
-  --bg: #fff;
-  --title-color: #fff;
-  --title-color-hover: #000;
-  --text-color: #666;
-  --button-color: #eee;
+  --bg: #f6f3f7;
+  --title-color: #ededed;
+  --title-color-hover: #222222;
+  --text-color: #4d4d4d;
+  --button-color: #d1eb3f;
   --button-color-hover: #ddd;
   background: var(--bg);
   border-radius: 2rem;
@@ -38,11 +38,11 @@ article.card {
   font-family: Lato, Montserrat, Helvetica, Arial, sans-serif;
 
   &.dark {
-    --bg: #222;
-    --title-color: #fff;
-    --title-color-hover: #fff;
-    --text-color: #ccc;
-    --button-color: #555;
+    --bg: #1e1e1e;
+    --title-color: #faf1f8;
+    --title-color-hover: #f2f2f2;
+    --text-color: #ddd;
+    --button-color: #2454ff;
     --button-color-hover: #444;
   }
 
@@ -53,7 +53,7 @@ article.card {
     height: 30%;
     bottom: 0.5rem;
     left: 0.5rem;
-    mask: linear-gradient(#0000, #000f 80%);
+    mask: linear-gradient(#0000, #000f 40%);
     backdrop-filter: blur(1rem);
     border-radius: 0 0 1.5rem 1.5rem;
     translate: 0 0;
