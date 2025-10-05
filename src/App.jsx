@@ -27,8 +27,8 @@ function App() {
 
   const handleToggle = (cardIndex) => {
     setIsFollowing((prevFollowStates) =>
-      prevFollowStates.map((isFollowed, i) =>
-        i === cardIndex ? !isFollowed : isFollowed
+      prevFollowStates.map((isFollowed, index) =>
+        index === cardIndex ? !isFollowed : isFollowed
       )
     );
   };
