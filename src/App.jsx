@@ -6,7 +6,7 @@ const imagemParaOsCards = "/viking.png";
 function App() {
   const [isFollowing, setIsFollowing] = useState([false, false]);
 
-  const cards = [
+  const cardsProfile = [
     {
       name: "Eivor Ragnarson",
       description:
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <main>
-      {cards.map((cardData, cardIndex) => (
+      {cardsProfile.map((cardData, cardIndex) => (
         <CardProfile
           key={cardIndex}
           {...cardData}
