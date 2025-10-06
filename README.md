@@ -2,6 +2,22 @@
 
 Um profile card elegante (modo claro/escuro) com interação de “seguir” e um cursor personalizado que acompanha o mouse, construído em React com foco em Clean Code, SOLID e boas práticas de arquitetura. O objetivo vai além de entregar o resultado visual: documentar decisões, erros corrigidos e aprendizados que podem ser aplicados em projetos reais.
 
+
+<table align="center" width="100%" style="margin: 0 auto;">
+  <tr>
+    <td style="border: 3px solid #00ffc8; border-radius: 10px; padding: 8px; background: #111;">
+     <img src="https://i.postimg.cc/3JrhZJGy/Screenshot-2025-10-05-202127.png" alt="GIF 1" style="display: block; margin: 0 auto; border-radius:8px; max-width:100%;">
+    </td>
+  </tr>
+<img src="https://i.postimg.cc/3JrhZJGy/Screenshot-2025-10-05-202127.png" alt="GIF 1" style="display: block; margin: 0 auto; border-radius:8px; max-width:100%;">
+
+
+
+https://github.com/user-attachments/assets/35ff9933-7652-4b2f-b715-b2e922673472
+
+
+
+
 ## Visão Geral
 
 - Componente de card de perfil (CardProfile).
