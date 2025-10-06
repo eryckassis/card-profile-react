@@ -147,7 +147,7 @@ Outras práticas aplicadas:
 - Separação de apresentação e comportamento (UI x lógica de evento/estado).
 - Tipagem de props com PropTypes (ou migração futura para TypeScript).
 
-## Erros encontrados e como fora corrigidos.
+## Erros encontrados e como fora corrigidos
 
 1. Ícone do Font Awesome não aparecia
 
