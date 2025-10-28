@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-  background-image: url("../../public/Background1.png");
+  background-image: url('../../public/Background1.png');
   background-size: cover;
   min-height: 100vh;
   margin: 0;
@@ -47,7 +47,7 @@ article.card {
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: calc(100% - 1rem);
     height: 30%;
@@ -67,7 +67,9 @@ article.card {
     object-position: 50% 5%;
     border-radius: 1.5rem;
     display: block;
-    transition: aspect-ratio 0.25s, object-position 0.5s;
+    transition:
+      aspect-ratio 0.25s,
+      object-position 0.5s;
   }
 
   > section {
@@ -84,7 +86,10 @@ article.card {
       translate: 0 -200%;
       opacity: 1;
       color: var(--title-color);
-      transition: color 0.5s, margin-block-end 0.25s, opacity 1s,
+      transition:
+        color 0.5s,
+        margin-block-end 0.25s,
+        opacity 1s,
         translate 0.25s;
     }
 
@@ -95,7 +100,10 @@ article.card {
       opacity: 0;
       margin: 0;
       translate: 0 100%;
-      transition: margin-block-end 0.25s, opacity 1s 0.2s, translate 0.25s 0.2s;
+      transition:
+        margin-block-end 0.25s,
+        opacity 1s 0.2s,
+        translate 0.25s 0.2s;
     }
 
     footer {
@@ -105,7 +113,9 @@ article.card {
       justify-content: space-between;
       translate: 0 100%;
       opacity: 0;
-      transition: translate 0.25s 0.2s, opacity 1s;
+      transition:
+        translate 0.25s 0.2s,
+        opacity 1s;
     }
 
     .tag,
@@ -128,7 +138,7 @@ article.card {
 
       &::before,
       &::after {
-        content: "";
+        content: '';
         width: 0.85rem;
         height: 0.1rem;
         background: currentcolor;
@@ -168,7 +178,9 @@ article.card {
     > img {
       aspect-ratio: 1 / 1;
       object-position: 50% 10%;
-      transition: aspect-ratio 0.25s, object-position 0.25s;
+      transition:
+        aspect-ratio 0.25s,
+        object-position 0.25s;
     }
 
     > section {
@@ -186,7 +198,9 @@ article.card {
       footer {
         translate: 0 0;
         opacity: 1;
-        transition: translate 0.25s 0.25s, opacity 0.5s 0.25s;
+        transition:
+          translate 0.25s 0.25s,
+          opacity 0.5s 0.25s;
       }
     }
   }

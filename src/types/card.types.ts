@@ -14,11 +14,11 @@ export interface CardProfileProps extends CardProfileData {
 export interface CardProfileCallbacks {
   onToggle: () => void;
   onImageLoad?: () => void;
-  onImageError?: (error: Error) => void;
+  onImageError?: () => void;
 }
 
 export interface CardProfileConfig {
   showFollowerCount: boolean;
   allowToggle: boolean;
-  theme: "ligth" | "dark" | "auto";
+  theme: 'ligth' | 'dark' | 'auto';
 }

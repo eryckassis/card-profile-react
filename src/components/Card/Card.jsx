@@ -1,17 +1,9 @@
-import PropTypes from "prop-types";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import PropTypes from 'prop-types';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
-function CardProfile({
-  name,
-  description,
-  followers,
-  isFollowing,
-  onToggle,
-  dark,
-  imageSource,
-}) {
+function CardProfile({ name, description, followers, isFollowing, onToggle, dark, imageSource }) {
   return (
-    <article className={`card${dark ? " dark" : ""}`}>
+    <article className={`card${dark ? ' dark' : ''}`}>
       <img src={imageSource} alt={`Perfil de ${name}`} />
       <section>
         <header>
@@ -19,18 +11,11 @@ function CardProfile({
         </header>
         <p>{description}</p>
         <footer>
-          <span
-            className="tag"
-            aria-label={`${followers} milhões de seguidores`}
-          >
+          <span className="tag" aria-label={`${followers} milhões de seguidores`}>
             <i className="fa-solid fa-user" aria-hidden="true"></i> {followers}M
           </span>
-          <button
-            type="button"
-            className={isFollowing ? "following" : ""}
-            onClick={onToggle}
-          >
-            {isFollowing ? "Unfollow" : "Seguir"}
+          <button type="button" className={isFollowing ? 'following' : ''} onClick={onToggle}>
+            {isFollowing ? 'Unfollow' : 'Seguir'}
           </button>
         </footer>
       </section>
