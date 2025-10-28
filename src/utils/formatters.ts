@@ -8,7 +8,7 @@ export const formatFollowers = (count: number): string => {
   return count.toString();
 };
 
-export const validadeImageUrl = (url: string): boolean => {
+export const validateImageUrl = (url: string): boolean => {
   try {
     new URL(url);
     return /\.(jpg|jpeg|png|wepb|gif|svg)$/i.test(url);
@@ -16,5 +16,3 @@ export const validadeImageUrl = (url: string): boolean => {
     return false;
   }
 };
-//
-//

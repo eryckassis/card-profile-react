@@ -1,0 +1,9 @@
+# .prettierignore
+node_modules
+dist
+build
+coverage
+.next
+.vercel
+*.min.js
+*.min.css
