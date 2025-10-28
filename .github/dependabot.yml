@@ -1,0 +1,56 @@
+# Dependabot Configuration
+# Mantém dependências atualizadas automaticamente
+
+version: 2
+updates:
+  # npm dependencies (package.json)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      # Verifica toda segunda-feira às 9h
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    
+    # Máximo de PRs abertos ao mesmo tempo
+    open-pull-requests-limit: 5
+    
+    # Labels automáticos
+    labels:
+      - "dependencies"
+      - "automated"
+    
+    # Prefixo da mensagem de commit
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    
+    # Estratégia de versionamento
+    # increase = atualiza para última versão
+    # increase-if-necessary = só atualiza se necessário
+    versioning-strategy: increase
+    
+    # Agrupa atualizações de desenvolvimento
+    groups:
+      dev-dependencies:
+        patterns:
+          - "@types/*"
+          - "@vitejs/*"
+          - "@vitest/*"
+          - "eslint*"
+          - "prettier"
+          - "typescript*"
+        update-types:
+          - "minor"
+          - "patch"
+    
+  # GitHub Actions (workflows)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "ci"
+      - "automated"
+    commit-message:
+      prefix: "ci"

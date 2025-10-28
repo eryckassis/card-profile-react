@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "__comment1": "=== 🚀 Desenvolvimento ===",
     "dev": "vite",
@@ -13,10 +17,15 @@
     "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
-    "__comment3": "=== ✅ Validação Completa ===",
+    "__comment3": "=== 🧪 Testes ===",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "__comment4": "=== ✅ Validação Completa ===",
     "validate": "npm run lint && npm run format:check",
     "validate:fix": "npm run lint:fix && npm run format",
-    "__comment4": "=== 🔧 Git Hooks ===",
+    "__comment5": "=== 🔧 Git Hooks ===",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -48,6 +57,8 @@
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
     "@vitejs/plugin-react": "^5.0.3",
+    "@vitest/coverage-v8": "^4.0.4",
+    "@vitest/ui": "^4.0.4",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -62,6 +73,6 @@
     "prettier": "^3.6.2",
     "typescript-eslint": "^8.46.2",
     "vite": "^7.1.7",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.4"
   }
 }
