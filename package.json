@@ -42,7 +42,7 @@
     "greensock": "^1.20.2",
     "gsap": "^3.13.0",
     "prop-types": "^15.8.1",
-    "react": "^19.1.1",
+    "react": "^19.2.0",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
-    "@types/react": "^19.1.13",
+    "@types/react": "^19.2.2",
     "@types/react-dom": "^19.1.9",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
