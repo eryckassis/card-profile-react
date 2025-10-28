@@ -22,3 +22,9 @@ dist-ssr
 *.sln
 *.sw?
 coverage/
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/test-results.json
