@@ -1,7 +1,10 @@
 # Card Profile React — Profile Card com Animações (GSAP)
 
-Um profile card elegante (modo claro/escuro) com interação de “seguir” e um cursor personalizado que acompanha o mouse, construído em React com foco em Clean Code, SOLID e boas práticas de arquitetura. O objetivo vai além de entregar o resultado visual: documentar decisões, erros corrigidos e aprendizados que podem ser aplicados em projetos reais.
+[![CI](https://github.com/eryckassis/card-profile-react/actions/workflows/ci.yml/badge.svg)](https://github.com/eryckassis/card-profile-react/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/eryckassis/card-profile-react/branch/master/graph/badge.svg)](https://codecov.io/gh/eryckassis/card-profile-react)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+Um profile card elegante (modo claro/escuro) com interação de "seguir" e um cursor personalizado que acompanha o mouse, construído em React com foco em Clean Code, SOLID e boas práticas de arquitetura. O objetivo vai além de entregar o resultado visual: documentar decisões, erros corrigidos e aprendizados que podem ser aplicados em projetos reais.
 
 <table align="center" width="100%" style="margin: 0 auto;">
   <tr>
@@ -11,12 +14,7 @@ Um profile card elegante (modo claro/escuro) com interação de “seguir” e u
   </tr>
 <img src="https://i.postimg.cc/3JrhZJGy/Screenshot-2025-10-05-202127.png" alt="GIF 1" style="display: block; margin: 0 auto; border-radius:8px; max-width:100%;">
 
-
-
 https://github.com/user-attachments/assets/35ff9933-7652-4b2f-b715-b2e922673472
-
-
-
 
 ## Visão Geral
 
@@ -111,7 +109,7 @@ Uso simplificado no `App.jsx`:
 Uso sugerido:
 
 ```jsx
-import MouseFollow from "./components/MouseFollow";
+import MouseFollow from './components/MouseFollow';
 
 <MouseFollow size={60} color="#fff" />;
 ```
@@ -166,32 +164,26 @@ Outras práticas aplicadas:
 ## Erros encontrados e como fora corrigidos
 
 1. Ícone do Font Awesome não aparecia
-
    - Causa: CDN ausente no `index.html` ou pacote não importado.
    - Correção: adicionar `<link ... font-awesome ...>` no `public/index.html` ou `npm i @fortawesome/fontawesome-free` e `import '@fortawesome/fontawesome-free/css/all.min.css'`.
 
 2. Cursor (bolinha) aparecia e sumia
-
    - Causa: lógica de fade dependente de `pointerenter/pointerleave` no `window`, eventos pouco confiáveis em alguns cenários.
    - Correção: desativar fade por padrão ou ligar o fade apenas após o primeiro `pointermove`; esconder só em `mouseleave` do `document`, `blur` e `visibilitychange`.
 
 3. `clienty` escrito incorretamente
-
    - Causa: typo comum (o correto é `e.clientY`).
    - Correção: padronizar `e.clientX`/`e.clientY`.
 
 4. Dupla centralização do cursor
-
    - Causa: CSS com `left/top` negativos e `transform` somados ao ajuste no JS.
    - Correção: escolher UMA estratégia — centralizar no JS (subtraindo `size/2`) OU no CSS com `translate(-50%, -50%)` sem subtrair no JS.
 
 5. Uso de `left/top` em animações
-
    - Causa: relayout e menor fluidez.
    - Correção (recomendada): migrar para `transform: translate3d(...)` com `gsap.quickTo`/`quickSetter`.
 
 6. Import de Compass (`@import "compass/css3"`)
-
    - Causa: Compass é legado (Sass antigo) e não funciona em CSS puro.
    - Correção: remover o import ou migrar para SCSS moderno; preferimos CSS/CSS Modules.
 
