@@ -64,11 +64,12 @@ jobs:
     name: 🧪 Test (Node ${{ matrix.node-version }})
     runs-on: ubuntu-latest
     
-    # Matrix: roda testes em Node 18 e 20
+    # Matrix: roda testes em Node 20 e 22
     # Analogia: Testar o app em Chrome E Firefox
+    # Node 18 não suporta node:inspector/promises usado pelo Vitest 4.x
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [20, 22]
     
     steps:
       - name: ⬇️ Checkout code
